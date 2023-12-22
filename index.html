@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
   <head>
-    <title>Khatami Budget App</title>
+    <title>Budget App</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="/dist/output.css" rel="stylesheet" />
@@ -15,10 +15,10 @@
         >
           <h2 class="flex items-center italic">
             <img src="/public/logo.svg" height="40" width="40" />
-            <span>Khatami Budget App</span>
+            <span>Budget App</span>
           </h2>
           <div class="flex items-center gap-4">
-            <h2>Ali Khatami</h2>
+            <h2>Naimul Haque</h2>
             <a href="#" class="undeline text-sm text-white/50">Sign Out</a>
           </div>
         </div>
@@ -27,7 +27,7 @@
       <div class="mx-auto max-w-sm px-5 py-8 text-center text-white">
         <div>
           <h2>Available Budget</h2>
-          <p class="mt-1 text-4xl font-medium">+ BDT 14,340.00</p>
+          <p class="mt-1 text-4xl font-medium">+ BDT<span id="total-budget">14,340.00</span></p>
         </div>
 
         <div
@@ -41,7 +41,7 @@
           class="mt-2 flex items-center justify-between bg-red-500 px-4 py-3 text-sm"
         >
           <span>Expenses</span>
-          <span>- BDT 1,762.69</span>
+          <span id="total-expense">- BDT 1,762.69</span>
         </div>
       </div>
     </div>
@@ -106,19 +106,18 @@
     <div
       class="mx-auto my-8 grid max-w-4xl grid-cols-1 gap-8 px-5 text-sm md:grid-cols-2"
     >
-      <!-- income list  -->
       <div>
         <h2 class="border-b pb-2 font-medium text-green-600">Income</h2>
 
         <!-- <p class="py-2.5 text-gray-600">There are no expenses.</p> -->
 
-        <ul id="income-list" class="divide-y">
+        <ul id ="income-list" class="divide-y">
           <li class="py-2.5">
             <div class="group flex justify-between gap-2 text-sm">
               <span>Website project</span>
 
               <div>
-                <span class="text-green-600">+11,999.99</span>
+                <span id="entry-value" class="text-green-600">+11,999.99</span>
                 <span
                   class="ml-2 hidden cursor-pointer font-medium text-red-500 group-hover:inline-block"
                 >
@@ -132,7 +131,7 @@
             <div class="group flex justify-between gap-2 text-sm">
               <span>Salary</span>
               <div>
-                <span class="text-green-600">+35,000.00</span>
+                <span id="entry-value" class="text-green-600">+35,000.00</span>
                 <span
                   class="ml-2 hidden cursor-pointer font-medium text-red-500 group-hover:inline-block"
                 >
@@ -157,8 +156,6 @@
           </li>
         </ul>
       </div>
-
-      <!-- expense list  -->
       <div>
         <h2 class="border-b pb-2 font-medium text-red-600">Expense</h2>
 
